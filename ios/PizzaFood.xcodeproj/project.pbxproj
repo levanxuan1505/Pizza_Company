@@ -563,6 +563,7 @@
 				DEVELOPMENT_TEAM = 8NVD28U9VS;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PizzaFood/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pizza Food";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,6 +592,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8NVD28U9VS;
 				INFOPLIST_FILE = PizzaFood/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pizza Food";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
