@@ -14,7 +14,14 @@
 
 // const styles = StyleSheet.create({});
 import React from 'react';
-import {View, Text, SafeAreaView, Keyboard, Alert} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Keyboard,
+  Alert,
+  StatusBar,
+} from 'react-native';
 import {Colors} from '../constants';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -76,6 +83,7 @@ const SignInScreen = ({navigation}) => {
   };
   return (
     <SafeAreaView style={{backgroundColor: Colors.DEFAULT_WHITE, flex: 1}}>
+      <StatusBar barStyle="dark-content" />
       <Loader visible={loading} />
       <View style={{paddingTop: 50, paddingHorizontal: 20}}>
         <Text
