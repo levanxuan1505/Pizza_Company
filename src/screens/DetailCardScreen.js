@@ -1,6 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Platform,
+} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Colors} from '../constants';
@@ -12,8 +19,20 @@ const DetailsCardScreen = ({navigation, route}) => {
   return (
     <SafeAreaView style={{backgroundColor: Colors.DEFAULT_WHITE}}>
       <View style={style.header}>
-        <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
-        <Text style={{fontSize: 20, fontWeight: 'bold'}}>Details</Text>
+        <Icon
+          name="arrow-back-ios"
+          size={28}
+          onPress={navigation.goBack}
+          color={Colors.DEFAULT_GREEN}
+        />
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: 'bold',
+            color: Colors.DEFAULT_GREEN,
+          }}>
+          Details
+        </Text>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
@@ -65,10 +84,11 @@ const DetailsCardScreen = ({navigation, route}) => {
 
 const style = StyleSheet.create({
   header: {
-    paddingVertical: 20,
+    paddingVertical: Platform.OS === 'ios' ? 20 : 0,
     flexDirection: 'row',
     alignItems: 'center',
     marginHorizontal: 20,
+    marginTop: Platform.OS === 'ios' ? 0 : 30,
   },
   details: {
     paddingHorizontal: 20,

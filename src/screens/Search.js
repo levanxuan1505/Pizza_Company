@@ -7,15 +7,13 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../constants';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function Search() {
-  const [keyboardStatus, setKeyboardStatus] = useState('');
-
   const History = [
     {id: 1, title: 'Pizza hải sản'},
     {
@@ -36,19 +34,7 @@ export default function Search() {
       title: 'Pizza Hawaii',
     },
   ];
-  useEffect(() => {
-    const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
-      setKeyboardStatus('Keyboard Shown');
-    });
-    const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {
-      setKeyboardStatus('Keyboard Hidden');
-    });
 
-    return () => {
-      showSubscription.remove();
-      hideSubscription.remove();
-    };
-  }, []);
   return (
     <SafeAreaView style={{marginHorizontal: 20}}>
       <View>
@@ -59,14 +45,18 @@ export default function Search() {
             // paddingHorizontal: 20,
           }}>
           <View style={styles.inputContainer}>
-            <Icon name="search" size={28} />
+            <Icon name="search" size={28} color={Colors.DEFAULT_GREEN} />
             <TextInput
               style={{flex: 1, fontSize: 18, marginLeft: 5}}
               placeholder="Tìm kiếm"
               onSubmitEditing={Keyboard.dismiss}
             />
             <TouchableOpacity>
-              <Icons name="camera-outline" size={30} />
+              <Icons
+                name="camera-outline"
+                size={30}
+                color={Colors.DEFAULT_GREEN}
+              />
             </TouchableOpacity>
           </View>
           <View style={styles.sortBtn}>

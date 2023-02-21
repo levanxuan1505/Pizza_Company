@@ -6,6 +6,7 @@ import {
   View,
   Image,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -217,6 +218,7 @@ export default function ProfileScreen({navigation}) {
 
 const styles = StyleSheet.create({
   header: {
+    marginTop: Platform.OS === 'ios' ? 0 : 20,
     paddingVertical: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -250,7 +252,7 @@ const styles = StyleSheet.create({
   },
   icons: {
     color: Colors.DEFAULT_GREEN,
-    marginLeft: 220,
+    marginLeft: 250,
   },
   logOut: {
     paddingTop: 15,

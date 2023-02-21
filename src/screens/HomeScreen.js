@@ -12,6 +12,7 @@ import {
   Dimensions,
   TouchableOpacity,
   TouchableHighlight,
+  Platform,
 } from 'react-native';
 import React, {useState} from 'react';
 import {Colors} from '../constants';
@@ -111,8 +112,16 @@ export default function HomeScreen({navigation}) {
       <View style={styles.header}>
         <View>
           <View style={{flexDirection: 'row'}}>
-            <Text style={{fontSize: 28}}>Xin chào,</Text>
-            <Text style={{fontSize: 28, fontWeight: 'bold', marginLeft: 5}}>
+            <Text style={{fontSize: 28, color: Colors.DEFAULT_GREEN}}>
+              Xin chào,
+            </Text>
+            <Text
+              style={{
+                fontSize: 28,
+                fontWeight: 'bold',
+                marginLeft: 5,
+                color: Colors.DEFAULT_GREEN,
+              }}>
               Xuân
             </Text>
           </View>
@@ -135,12 +144,16 @@ export default function HomeScreen({navigation}) {
           paddingHorizontal: 20,
         }}>
         <View style={styles.inputContainer}>
-          <Icon name="search" size={28} />
+          <Icon name="search" size={28} color={Colors.DEFAULT_GREEN} />
           <TextInput
             style={{flex: 1, fontSize: 18, marginLeft: 5}}
             placeholder="Tìm kiếm"></TextInput>
           <TouchableOpacity>
-            <Icons name="camera-outline" size={30} />
+            <Icons
+              name="camera-outline"
+              size={30}
+              color={Colors.DEFAULT_GREEN}
+            />
           </TouchableOpacity>
         </View>
         <View style={styles.sortBtn}>
@@ -161,7 +174,7 @@ export default function HomeScreen({navigation}) {
 }
 const styles = StyleSheet.create({
   header: {
-    marginTop: 20,
+    marginTop: Platform.OS === 'ios' ? 20 : 35,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,

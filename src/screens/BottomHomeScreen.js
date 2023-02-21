@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
-import {View} from 'react-native';
+import {View, Platform} from 'react-native';
 import React from 'react';
 import 'react-native-gesture-handler';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -67,7 +67,7 @@ export default function BottomHomeScreen() {
                 borderRadius: 40,
                 backgroundColor: Colors.DEFAULT_WHITE,
                 borderColor: {color} ? color : Colors.DEFAULT_WHITE,
-                top: -10,
+                top: Platform.OS === 'ios' ? -10 : -15,
                 elevation: 5,
               }}>
               <Icon name="search" size={28} color={color} />

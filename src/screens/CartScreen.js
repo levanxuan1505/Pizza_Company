@@ -1,7 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Platform,
+} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Colors} from '../constants';
@@ -86,6 +93,7 @@ const CartScreen = ({navigation}) => {
 };
 const style = StyleSheet.create({
   header: {
+    marginTop: Platform.OS === 'ios' ? 0 : 20,
     paddingVertical: 20,
     flexDirection: 'row',
     alignItems: 'center',

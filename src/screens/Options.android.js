@@ -16,7 +16,7 @@ export default function Options({navigation}) {
       source={Images.BACKGROUND}
       resizeMode="cover"
       style={styles.backgroundImage}>
-      <StatusBar barStyle="light-content" hidden={false} translucent={true} />
+      <StatusBar barStyle="dark-content" hidden={false} translucent={true} />
       <SafeAreaView style={styles.container}>
         <View>
           <TouchableOpacity
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#037E3F',
     margin: 40,
     height: 70,
-    top: 490,
+    top: 350,
     borderRadius: 50,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#FBA83C',
     margin: 40,
     height: 70,
-    top: 450,
+    top: 320,
     borderRadius: 50,
   },
   buttonText: {
-    top: 22,
+    top: 19,
     paddingBottom: 40,
     paddingLeft: 10,
     fontWeight: 'bold',

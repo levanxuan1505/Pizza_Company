@@ -1,7 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Platform,
+} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/Ionicons';
@@ -55,7 +62,7 @@ const BookmarkScreen = ({navigation}) => {
           name="heart"
           size={32}
           color={Colors.DEFAULT_GREEN}
-          style={{marginLeft: 176}}
+          style={{marginLeft: Platform.OS === 'ios' ? 176 : 165}}
         />
       </View>
       <FlatList
@@ -70,6 +77,7 @@ const BookmarkScreen = ({navigation}) => {
 };
 const styles = StyleSheet.create({
   header: {
+    marginTop: Platform.OS === 'ios' ? 0 : 20,
     paddingVertical: 20,
     flexDirection: 'row',
     alignItems: 'center',
