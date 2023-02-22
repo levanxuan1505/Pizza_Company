@@ -45,6 +45,7 @@ export default function BottomHomeScreen() {
         name="Cart"
         component={CartScreen}
         options={{
+          tabBarBadge: 3,
           headerShown: false,
           tabBarIcon: ({color}) => (
             <Icon name="shopping-cart" size={28} color={color} />
@@ -67,7 +68,7 @@ export default function BottomHomeScreen() {
                 borderRadius: 40,
                 backgroundColor: Colors.DEFAULT_WHITE,
                 borderColor: {color} ? color : Colors.DEFAULT_WHITE,
-                top: Platform.OS === 'ios' ? -10 : -15,
+                top: Platform.OS === 'ios' ? -10 : -16,
                 elevation: 5,
               }}>
               <Icon name="search" size={28} color={color} />
@@ -79,6 +80,7 @@ export default function BottomHomeScreen() {
         name="Bookmark"
         component={BookmarkScreen}
         options={{
+          tabBarBadge: 10,
           headerShown: false,
           tabBarIcon: ({color}) => (
             <Icon name="bookmarks" size={28} color={color} />
