@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity,
   StatusBar,
+  Alert,
 } from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#037E3F',
     margin: 40,
     height: 70,
-    top: 200,
+    top: 290,
     borderRadius: 50,
     flexDirection: 'row',
     justifyContent: 'center',
